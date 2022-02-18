@@ -50,14 +50,6 @@ const markupMade = galleryItems
 const galleryMade = gallery.insertAdjacentHTML('beforeend', markupMade);
 const unnecessaryLinks = document.querySelectorAll('a.gallery__item');
 
-unnecessaryLinks.forEach(el => {
-    el.addEventListener('click', onPreventDefault);
-});
-
-function onPreventDefault(event) {
-    event.preventDefault();
-}
-
 const newLightbox = new SimpleLightbox('a.gallery__item', {
     captionType: 'attr',
     captionsData: 'alt',

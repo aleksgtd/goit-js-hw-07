@@ -65,17 +65,10 @@ const markupMade = galleryItems
 const galleryMade = gallery.insertAdjacentHTML('beforeend', markupMade);
 const unnecessaryLinks = document.querySelectorAll('a.gallery__link');
 
-unnecessaryLinks.forEach(el => {
-    el.addEventListener('click', onPreventDefault);
-});
-
-function onPreventDefault(event) {
-    event.preventDefault();
-}
-
 gallery.addEventListener('click', onShowLightbox);
 
 function onShowLightbox(event) {
+    event.preventDefault();
     const targetEl = event.target;
 
     if (targetEl.nodeName !== 'IMG') {
